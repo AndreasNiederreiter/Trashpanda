@@ -1,0 +1,201 @@
+[gd_scene load_steps=9 format=3 uid="uid://wfc5drcv1gw2"]
+
+[ext_resource type="Script" uid="uid://kb34ki0il0i1" path="res://Scripts/hit_notes_better.gd" id="1_vsimt"]
+[ext_resource type="Texture2D" uid="uid://cgww8tiyahqy3" path="res://Assets/note_grey.png" id="4_q2bit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsimt"]
+size = Vector2(3.5, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_615pm"]
+size = Vector2(34.75, 36)
+
+[sub_resource type="LabelSettings" id="LabelSettings_615pm"]
+font_size = 21
+font_color = Color(0.933935, 0.000740829, 0.938944, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsimt"]
+font_size = 20
+font_color = Color(0, 1, 0, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q2bit"]
+font_size = 25
+font_color = Color(0.870588, 0, 0, 1)
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2bit"]
+size = Vector2(34.25, 197)
+
+[node name="Hit notes" type="Node2D"]
+script = ExtResource("1_vsimt")
+
+[node name="Note1Hit" type="Area2D" parent="."]
+
+[node name="NoteGrey" type="Sprite2D" parent="Note1Hit"]
+scale = Vector2(0.0961867, 0.0961867)
+texture = ExtResource("4_q2bit")
+
+[node name="PerfectHit1" type="Area2D" parent="Note1Hit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit/PerfectHit1"]
+shape = SubResource("RectangleShape2D_vsimt")
+
+[node name="GoodHit1" type="Area2D" parent="Note1Hit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit/GoodHit1"]
+shape = SubResource("RectangleShape2D_615pm")
+
+[node name="Note1Hit2" type="Area2D" parent="."]
+position = Vector2(0, 40)
+
+[node name="NoteGrey" type="Sprite2D" parent="Note1Hit2"]
+scale = Vector2(0.0961867, 0.0961867)
+texture = ExtResource("4_q2bit")
+
+[node name="PerfectHit2" type="Area2D" parent="Note1Hit2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit2/PerfectHit2"]
+shape = SubResource("RectangleShape2D_vsimt")
+
+[node name="GoodHit2" type="Area2D" parent="Note1Hit2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit2/GoodHit2"]
+shape = SubResource("RectangleShape2D_615pm")
+
+[node name="Note1Hit3" type="Area2D" parent="."]
+position = Vector2(0, 81)
+
+[node name="NoteGrey" type="Sprite2D" parent="Note1Hit3"]
+scale = Vector2(0.0961867, 0.0961867)
+texture = ExtResource("4_q2bit")
+
+[node name="PerfectHit3" type="Area2D" parent="Note1Hit3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit3/PerfectHit3"]
+shape = SubResource("RectangleShape2D_vsimt")
+
+[node name="GoodHit3" type="Area2D" parent="Note1Hit3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit3/GoodHit3"]
+shape = SubResource("RectangleShape2D_615pm")
+
+[node name="Note1Hit4" type="Area2D" parent="."]
+position = Vector2(0, 122)
+
+[node name="NoteGrey" type="Sprite2D" parent="Note1Hit4"]
+scale = Vector2(0.0961867, 0.0961867)
+texture = ExtResource("4_q2bit")
+
+[node name="PerfectHit4" type="Area2D" parent="Note1Hit4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit4/PerfectHit4"]
+shape = SubResource("RectangleShape2D_vsimt")
+
+[node name="GoodHit4" type="Area2D" parent="Note1Hit4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit4/GoodHit4"]
+shape = SubResource("RectangleShape2D_615pm")
+
+[node name="Note1Hit5" type="Area2D" parent="."]
+position = Vector2(0, 161)
+
+[node name="NoteGrey" type="Sprite2D" parent="Note1Hit5"]
+scale = Vector2(0.0961867, 0.0961867)
+texture = ExtResource("4_q2bit")
+
+[node name="PerfectHit5" type="Area2D" parent="Note1Hit5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit5/PerfectHit5"]
+shape = SubResource("RectangleShape2D_vsimt")
+
+[node name="GoodHit5" type="Area2D" parent="Note1Hit5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1Hit5/GoodHit5"]
+shape = SubResource("RectangleShape2D_615pm")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 436.0
+offset_top = -44.0
+offset_right = 476.0
+offset_bottom = -21.0
+
+[node name="Perfect" type="Label" parent="."]
+offset_left = -36.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = -40.0
+rotation = -0.296706
+text = "PERFECT!"
+label_settings = SubResource("LabelSettings_615pm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Good" type="Label" parent="."]
+offset_left = -36.0
+offset_top = -76.0
+offset_right = 73.0
+offset_bottom = -40.0
+rotation = -0.296706
+text = "GOOD!"
+label_settings = SubResource("LabelSettings_vsimt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Miss" type="Label" parent="."]
+offset_left = -46.0
+offset_top = -88.0
+offset_right = 63.0
+offset_bottom = -52.0
+text = "MISS!"
+label_settings = SubResource("LabelSettings_q2bit")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerPerfect" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="TimerGood" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="TimerMiss" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Start" type="Timer" parent="."]
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2(-70, 81)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+shape = SubResource("RectangleShape2D_q2bit")
+
+[connection signal="area_entered" from="Note1Hit/PerfectHit1" to="." method="in_PerfectHit_1"]
+[connection signal="area_exited" from="Note1Hit/PerfectHit1" to="." method="out_PerfectHit_1"]
+[connection signal="area_entered" from="Note1Hit/GoodHit1" to="." method="in_GoodHit_1"]
+[connection signal="area_exited" from="Note1Hit/GoodHit1" to="." method="out_GoodHit_1"]
+[connection signal="area_entered" from="Note1Hit2/PerfectHit2" to="." method="in_PerfectHit_2"]
+[connection signal="area_exited" from="Note1Hit2/PerfectHit2" to="." method="out_PerfectHit_2"]
+[connection signal="area_entered" from="Note1Hit2/GoodHit2" to="." method="in_GoodHit_2"]
+[connection signal="area_exited" from="Note1Hit2/GoodHit2" to="." method="out_GoodHit_2"]
+[connection signal="area_entered" from="Note1Hit3/PerfectHit3" to="." method="in_PerfectHit_3"]
+[connection signal="area_exited" from="Note1Hit3/PerfectHit3" to="." method="out_PerfectHit_3"]
+[connection signal="area_entered" from="Note1Hit3/GoodHit3" to="." method="in_GoodHit_3"]
+[connection signal="area_exited" from="Note1Hit3/GoodHit3" to="." method="out_GoodHit_3"]
+[connection signal="area_entered" from="Note1Hit4/PerfectHit4" to="." method="in_PerfectHit_4"]
+[connection signal="area_exited" from="Note1Hit4/PerfectHit4" to="." method="out_PerfectHit_4"]
+[connection signal="area_entered" from="Note1Hit4/GoodHit4" to="." method="in_GoodHit_4"]
+[connection signal="area_exited" from="Note1Hit4/GoodHit4" to="." method="out_GoodHit_4"]
+[connection signal="area_entered" from="Note1Hit5/PerfectHit5" to="." method="in_PerfectHit_5"]
+[connection signal="area_exited" from="Note1Hit5/PerfectHit5" to="." method="out_PerfectHit_5"]
+[connection signal="area_entered" from="Note1Hit5/GoodHit5" to="." method="in_GoodHit_5"]
+[connection signal="area_exited" from="Note1Hit5/GoodHit5" to="." method="out_GoodHit_5"]
+[connection signal="timeout" from="TimerPerfect" to="." method="PerfectLable_Timeout"]
+[connection signal="timeout" from="TimerGood" to="." method="GoodLable_Timeout"]
+[connection signal="timeout" from="TimerMiss" to="." method="MissLable_Timeout"]
+[connection signal="area_entered" from="End" to="." method="at_end"]

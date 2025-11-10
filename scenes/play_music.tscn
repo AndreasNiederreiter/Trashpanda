@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx6asmcugv1s7"]
+
+[ext_resource type="AudioStream" uid="uid://bcr57gpwppppt" path="res://Music/Haru Musik.mp3" id="1_42a5y"]
+
+[node name="playMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_42a5y")

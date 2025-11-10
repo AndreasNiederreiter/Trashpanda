@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlnxe0rdsdu83"]
+
+[ext_resource type="Script" uid="uid://c0x1g6i6bdymj" path="res://scenes/game_complete.gd" id="1_mts28"]
+
+[node name="Game Complete" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.984835, 1)
+script = ExtResource("1_mts28")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -587.916
+offset_top = -158.0
+offset_right = -547.916
+offset_bottom = -118.0
+scale = Vector2(29.8695, 16.5747)
+
+[node name="End Text" type="Label" parent="."]
+layout_mode = 2
+offset_left = -574.715
+offset_top = -82.0
+offset_right = 576.285
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Congratulations!
+ you've cpmpleted the game."
+horizontal_alignment = 1
+
+[node name="end score" type="Label" parent="."]
+layout_mode = 2
+offset_left = -577.762
+offset_top = 71.0
+offset_right = 573.238
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "your final score: X"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -188.864
+offset_top = 162.0
+offset_right = -82.864
+offset_bottom = 228.0
+scale = Vector2(3.60008, 3.60008)
+alignment = 1
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+text = "Restart"
+
+[node name="Exit to menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+text = "Exit to menu"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1.0154, 164)

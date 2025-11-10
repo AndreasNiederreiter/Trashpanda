@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctprwfkpbhi0"]
+
+[ext_resource type="Script" uid="uid://bo25y4e27xcal" path="res://scenes/trashcan.gd" id="1_dqkxp"]
+
+[node name="Trashcan" type="Node2D"]
+script = ExtResource("1_dqkxp")
+
+[node name="Spawner" type="Node2D" parent="."]

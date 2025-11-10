@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1mxscjfoieq3"]
+
+[ext_resource type="Script" uid="uid://bl6k4f3oqnlqv" path="res://Scripts/player.gd" id="1_g2brh"]
+[ext_resource type="Texture2D" uid="uid://c3u7wnaceeukp" path="res://Assets/trashpanda.png" id="3_dn4c7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vejd"]
+atlas = ExtResource("3_dn4c7")
+region = Rect2(0, 0, 2390, 1670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws0vm"]
+atlas = ExtResource("3_dn4c7")
+region = Rect2(0, 1670, 2390, 1670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhr3r"]
+atlas = ExtResource("3_dn4c7")
+region = Rect2(2390, 0, 2390, 1670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t53lx"]
+atlas = ExtResource("3_dn4c7")
+region = Rect2(2390, 1670, 2390, 1670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn4c7"]
+atlas = ExtResource("3_dn4c7")
+region = Rect2(2390, 0, 2390, 1670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi2kj"]
+atlas = ExtResource("3_dn4c7")
+region = Rect2(0, 1670, 2390, 1670)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yi2kj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vejd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws0vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhr3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t53lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn4c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi2kj")
+}],
+"loop": true,
+"name": &"Trash Panda",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vejd"]
+radius = 21.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-110, -14)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_g2brh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(0.0381456, 0.0381456)
+sprite_frames = SubResource("SpriteFrames_yi2kj")
+animation = &"Trash Panda"
+autoplay = "Trash Panda"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 1)
+shape = SubResource("CircleShape2D_4vejd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

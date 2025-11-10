@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyyf2tunwt8gr"]
+
+[ext_resource type="Script" uid="uid://d28i1j5sojxwp" path="res://Scripts/menu.gd" id="1_yqeox"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.971674, 0.974312)
+script = ExtResource("1_yqeox")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -625.0
+offset_top = -345.0
+offset_right = 609.0
+offset_bottom = 339.0
+
+[node name="Game Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = -459.0
+offset_top = -271.0
+offset_right = 463.0
+offset_bottom = -180.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 66
+text = "Trash Panda"
+horizontal_alignment = 1
+
+[node name="How to play" type="Label" parent="."]
+layout_mode = 0
+offset_left = -504.0
+offset_top = -152.0
+offset_right = 508.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "HOW TO PLAY:
+Try to hit the music notes at the right time to collect score points untill the song is over.
+Hit keys: A S D
+Jump over the trash cans. If you colide with a trash can the Game is over.
+Jump = space key"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -322.0
+offset_right = -176.0
+offset_bottom = 111.0
+scale = Vector2(4.41008, 4.41008)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+text = "Play"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+text = "Exit Game"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

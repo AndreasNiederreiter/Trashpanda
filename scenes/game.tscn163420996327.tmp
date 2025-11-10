@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2p4pnbgb1lyx"]
+
+[ext_resource type="Script" uid="uid://b4unncp8bd5xw" path="res://Scripts/game2.gd" id="1_gee14"]
+[ext_resource type="Texture2D" uid="uid://bey32576a201o" path="res://Assets/background_musikGame.png" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c1mxscjfoieq3" path="res://scenes/character_body_2d.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://wfc5drcv1gw2" path="res://scenes/hit_notes.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c4hxgs0xdmusb" path="res://scenes/Note0.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dtqumkrwcwt2w" path="res://scenes/spawner.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://bx6asmcugv1s7" path="res://scenes/play_music.tscn" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://dpmypf1je073s" path="res://Music/Music-Game.wav" id="7_u5sy4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
+size = Vector2(1174, 23)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_gee14")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(-2, 75.0625)
+scale = Vector2(0.710214, 0.581723)
+texture = ExtResource("1_lnu2h")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_yqjtg")]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Hit notes" parent="." instance=ExtResource("2_lnu2h")]
+position = Vector2(-243, 40)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 72)
+scale = Vector2(30.3888, 20.7212)
+zoom = Vector2(2, 2)
+
+[node name="runaway" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="accuracy texts" type="Node" parent="."]
+
+[node name="Miss" type="Label" parent="accuracy texts"]
+offset_left = -367.0
+offset_top = 7.0
+offset_right = -327.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Miss"
+
+[node name="Good" type="Label" parent="accuracy texts"]
+offset_left = -370.0
+offset_top = 37.0
+offset_right = -328.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.364706, 1, 0, 1)
+text = "Good"
+
+[node name="Perfect" type="Label" parent="accuracy texts"]
+offset_left = -373.0
+offset_top = 66.0
+offset_right = -317.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+text = "Perfect"
+
+[node name="Area2D" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(191, -144)
+
+[node name="Spawner" parent="." instance=ExtResource("5_iywne")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-110, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4, 14)
+shape = SubResource("WorldBoundaryShape2D_iywne")
+
+[node name="playMusic" parent="." instance=ExtResource("6_p57ef")]
+stream = ExtResource("7_u5sy4")
+volume_db = 0.33
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

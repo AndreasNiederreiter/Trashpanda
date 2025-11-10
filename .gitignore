@@ -1,0 +1,12 @@
+# Godot - generierte / lokale Dateien, die nicht versioniert werden sollten
+.import/
+.export/
+*.import
+.godot/
+export_presets.cfg
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
